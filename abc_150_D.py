@@ -1,11 +1,28 @@
+def divider(A,N):
+    """
+    リストA内の全要素が全て2**nで割れるときTrueを返す
+    """
+    cnt_list=[]
+    same=True
+    for n in range(N):        
+        tmp=A[n]
+        cnt=0
+        while tmp%2==0:
+            tmp//=2
+            cnt+=1
+        cnt_list.append(cnt)
+        if n>=1 and cnt!=cnt_list[n-1]:
+            same=False
+            break
+    return same       
+
 def cal_minX(A,N,M):
     """
     hit A内の数全てでXが割り切れ、かつ商が奇数だったらTrue
     """
-    modA=list(map(lambda x:x%2,A))
     max_A=max(A)
-    #A内に偶奇が混在する場合は解が存在しない
-    if len(set(modA))==2:
+
+    if divider(A,N)==False:
         no_ans=True
         minX=0
     else:
@@ -46,7 +63,7 @@ def main():
     #題意を満たす最小のXを求める。
     no_ans,minX=cal_minX(A,N,M)
     #1-Mの中にminXの奇数倍数がいくつあるか調べる
-    if minX>M or no_ans:
+    if no_ans:
         return 0
     else:
         if M//minX%2==1:
