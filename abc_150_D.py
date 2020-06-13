@@ -1,6 +1,6 @@
 def divider(A,N):
     """
-    リストA内の全要素が全て2**nで割れるときTrueを返す
+    リストA内の全要素が2で同じ回数割れるときTrueを返す
     """
     cnt_list=[]
     same=True
