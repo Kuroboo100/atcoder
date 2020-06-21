@@ -5,19 +5,30 @@ S.sort()
 
 l=[]
 c=[]
-prev=""
+prev=S[0]
 cnt=0
-for e in S:
-    if e==prev:
+for n in range(len(S)):
+    if S[n]==prev:
         cnt+=1
     else:
         c.append(cnt)
-        cnt=0
-        l.append(e)
-        prev=e
+        cnt=1
+        l.append(prev)
+        prev=S[n]
+if cnt!=0:
+    c.append(cnt)
+    l.append(prev)
 
-print(S)
-print(l)
-print(c)
+max_cnt=max(c)
+
+max_str=[]
+for n in range(len(c)):
+    if c[n]==max_cnt:
+       max_str.append(l[n])
+max_str.sort()
+
+for e in max_str:
+    print(e) 
+
 
         
