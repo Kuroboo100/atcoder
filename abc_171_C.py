@@ -1,4 +1,4 @@
-def main():
+def main_():
     #input
     N=int(input())
     l=list("zabcdefghijklmnopqrstuvwxy")
@@ -19,6 +19,21 @@ def main():
             name.append(l[n])
         name=[name[n] for n in reversed(range(len(name)))]
         print("".join(name))
+    
+
+def main():
+    #input
+    N=int(input())
+    l=list("abcdefghijklmnopqrstuvwxyz")
+    n=N
+    name=""
+    while n>=26:
+        n-=1
+        name+=l[n%26]
+        n//=26
+    if n!=0:
+        name+=l[n-1]
+    print(name[::-1])
 
 if __name__=="__main__":
     main()
