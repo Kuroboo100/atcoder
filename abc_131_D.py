@@ -13,7 +13,6 @@ fin=True
 for n in range(N):
     tmp=B[n][1]
     sumA+=A[tmp]
-    print(sumA,tmp,B[n][0])
     if sumA>B[n][0]:
         fin=False
         break

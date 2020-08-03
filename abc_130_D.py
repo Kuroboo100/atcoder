@@ -9,8 +9,6 @@ while s<K and i<=N-1:
     if s<K:
         i+=1
 ans+=N-i
-print("i "+str(i))
-print(ans)
 
 for n in range(N):
     s-=a[n]
@@ -22,7 +20,5 @@ for n in range(N):
             s+=a[i]
         if s>=K:
             ans+=N-i
-    print("n "+str(n)+" i "+str(i))
-    print(ans)
 
 print(ans)

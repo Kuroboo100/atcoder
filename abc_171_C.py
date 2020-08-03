@@ -1,4 +1,4 @@
-def main_():
+def main_():#見苦しい実装
     #input
     N=int(input())
     l=list("zabcdefghijklmnopqrstuvwxy")
@@ -21,7 +21,7 @@ def main_():
         print("".join(name))
     
 
-def main():
+def main():#やり直し
     #input
     N=int(input())
     l=list("abcdefghijklmnopqrstuvwxyz")

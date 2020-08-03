@@ -1,9 +1,15 @@
-def gcb(l):
-    gcb=0
-    for i in range(1,min(l)+1):
-        if sum([l[n]%i for n in range(len(l))])==0:
-            gcb=i
-    return gcb
+def gcd(C,D):
+    a=min([C,D])
+    b=max([C,D])
+    tmp=a
+    a=b%a
+    b=tmp
+    if a==0:
+        return tmp
+    else:
+        return gcd(a,b)
 
-l=[10,15]
-print(gcb(l))
+print(937510582*419716939)
+
+393489071757148498
+314159265358979323

@@ -40,24 +40,31 @@ def binary_search2(A,n):
 
 #OK NG method
 def binary_search3(A,x):
-    OK=A[0]-1
-    NG=len(A)
-    DIV=(OK+NG)//2
-    while OK+1<NG:
-        if x>=A[DIV]:
-            OK=DIV
-        else:
-            NG=DIV
+    if x<A[0]:
+        OK=0
+        NG=0
+    elif x>A[len(A)-1]:
+        OK=len(A)-1
+        NG=len(A)-1
+    else:
+        OK=0
+        NG=len(A)
         DIV=(OK+NG)//2
-    return OK 
+        while OK+1<NG:
+            if x>=A[DIV]:
+                OK=DIV
+            else:
+                NG=DIV
+            DIV=(OK+NG)//2
+    return OK,NG
 
-N=10
-A=[2*n for n in range(N)]
-x=7
+N=100
+A=[n**2+100 for n in range(N)]
+x=10000
 
 print(A)
 print(binary_search3(A,x))
-print(A[binary_search3(A,x)])
+print(A[binary_search3(A,x)[0]],A[binary_search3(A,x)[1]])
 
 
             
